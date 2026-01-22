@@ -5,11 +5,7 @@ import (
 )
 
 func GetSlice(slice *[]int) (int, int, error) {
-
-	if (len(*slice) == 0) && (cap(*slice) == 0) {
-		return 0, 0, errors.New("пустой слайс")
-	}
-	if slice == nil {
+	if *slice == nil {
 		return 0, 0, errors.New("указатель на слайс равен nil")
 	}
 	return len(*slice), cap(*slice), nil
